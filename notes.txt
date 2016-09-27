@@ -1,0 +1,80 @@
+Create - SQL - INSERT
+INSERT INTO <table> VALUES (value1, value2...);
+
+INSERT INTO <table> VALUES (NULL, value2, value3, ...) Insert NULL for ID - ID Auto Populates - Schema = Auto Complete turned "ON"
+
+For better Reading/Understanding
+INSERT INTO <table> (id, books, returned, ...) VALUES (value1, value2, ...)
+
+Order label and values to have them inserted correctly.
+
+If NULL on other values returned blank
+If NULL left out SQL will assume NULL
+Designers of Database may require values
+
+Database Seed Files
+INSERT INTO <table>
+            (title, author, genre, published)
+      VALUES("The Circle", "Dave Eggers", "Sci-Fi", 2013),
+            ("Contact", "Carl Sagan", "Sci-Fi", 1985),
+            ("Animal Farm", "George Orwell", NULL, 1945);
+
+
+READ - SQL - SELECT ** In SQL BASICS NOTES
+
+
+UPDATE - SQL - SET
+UPDATE <table> SET <column> = <value>;
+
+UPDATE users SET last_name = "Thompson";
+Sets all last names to Thompson
+
+Multiple Updates
+UPDATE <table> SET <col1>=<val1>, <col2>=<val2>;
+
+Individual Rows
+UPDATE <table> SET <col> = <value> WHERE <condition>;
+
+UPDATE <table> SET <col> = <value> WHERE id = 20;
+WHERE _ AND _ AND _ ;
+
+
+DELETE-SQL- DELETE
+DELETE FROM <table>;
+
+DELETE FROM books;
+Removes all data - No way to restore.
+DELETE FROM <table> WHERE <condition>;
+
+DELETE FROM <table> WHERE id = 4;
+
+
+
+ERROR HANDLING
+-Transactions
+
+BEGIN TRANSACTION; //Switches auto commit off - Tells SQL everything below run together.
+or BEGIN;
+
+COMMIT; //End line tells SQL to commit everything between the two.
+
+
+Checking everything out before COMMIT;
+
+BEGIN;
+SQL SEED DATA
+
+SQL SELECT * FROM <table> //Look at Data - IS FAUX DATA not Committed yet.
+
+-Made a mistake-
+ROLLBACK; //Rolls back to empty data table can now start BEGIN; again.
+
+
+ORM - OBJECT RELATIONAL MAPPING
+- Handles Transaction
+- One Language from application no sql
+Examples 
+--Hibernate for Java
+--CoreData for Objective-C or Swift
+--Django ORM for Python
+--ActiveRecord for Ruby
